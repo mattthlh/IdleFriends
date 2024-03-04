@@ -6,13 +6,7 @@ export default {
 			roboto: ['Roboto'],
 			playfair: ['Playfair', 'sans-serif'],
 		},
-		extend: {
-			colors: {
-				NMHBlue: '#009CDE',
-				nmhNavy: '#002855',
-				NMHRed: '#7e2d40',
-			},
-		},
+		extend: {},
 	},
 	plugins: [],
 }
