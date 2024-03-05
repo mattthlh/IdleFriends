@@ -1,0 +1,5 @@
+[
+	{ "name": "coal", "health": 100, "reward": 5 },
+	{ "name": "iron", "health": 350, "reward": 15 },
+	{ "name": "gold", "health": 500, "reward": 25 }
+]

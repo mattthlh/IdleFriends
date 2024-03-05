@@ -1,5 +1,5 @@
-import ClickComponent from './components/ClickComponent'
-import ShopComponent from './components/ShopComponent'
+import ClickComponent from './ClickPanel'
+import ShopComponent from './ShopPanel'
 
 const App = () => {
 	return (
