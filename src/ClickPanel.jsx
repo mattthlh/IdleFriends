@@ -1,10 +1,25 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import Entity from './components/Entity'
 import data from './assets/data.json'
 
 const ClickComponent = () => {
 	const [entityIndex, setEntityIndex] = useState(0)
 	const [gold, setGold] = useState(0)
+	const [cps, setCPS] = useState(0)
+	const clicksRef = useRef(0)
+
+	useEffect(() => {
+		let interval
+
+		// Update CPS every second
+		interval = setInterval(() => {
+			setCPS(clicksRef.current)
+			clicksRef.current = 0
+		}, 1000)
+
+		// Cleanup interval on component unmount
+		return () => clearInterval(interval)
+	}, [])
 
 	return (
 		<div className='flex flex-col justify-center items-center h-full w-full'>
@@ -20,8 +35,10 @@ const ClickComponent = () => {
 				<Entity
 					key={entityIndex}
 					entity={data[entityIndex]}
-					gold={gold}
 					setGold={setGold}
+					clicked={() => {
+						clicksRef.current += 1
+					}}
 				/>
 				<button
 					hidden={entityIndex >= data.length - 1}
@@ -31,6 +48,7 @@ const ClickComponent = () => {
 					RIGHT
 				</button>
 			</div>
+			<p>CPS: {cps}</p>
 		</div>
 	)
 }

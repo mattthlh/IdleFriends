@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 
-const Entity = ({ entity, gold, setGold }) => {
+const Entity = ({ entity, setGold, clicked }) => {
 	const [health, setHealth] = useState(entity.health)
 
 	const attack = () => {
+		clicked()
+
 		if (health - 10 <= 0) {
 			setHealth(100)
-			setGold(gold + entity.reward)
+			setGold((prev) => prev + entity.reward)
 			console.log(
 				entity.name +
 					' was killed. You get ' +
