@@ -11,6 +11,7 @@ const ClickComponent = () => {
 			<p>Gold: {gold}</p>
 			<div className='flex flex-row justify-evenly'>
 				<button
+					hidden={entityIndex <= 0}
 					onClick={() => {
 						setEntityIndex(entityIndex - 1)
 					}}>
@@ -23,6 +24,7 @@ const ClickComponent = () => {
 					setGold={setGold}
 				/>
 				<button
+					hidden={entityIndex >= data.length - 1}
 					onClick={() => {
 						setEntityIndex(entityIndex + 1)
 					}}>
