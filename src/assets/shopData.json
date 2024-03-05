@@ -1,0 +1,5 @@
+[
+	{ "name": "Upgrade Pickaxe", "price": 10 },
+	{ "name": "Hire Miners", "price": 100 },
+	{ "name": "Hire Robots", "price": 500 }
+]

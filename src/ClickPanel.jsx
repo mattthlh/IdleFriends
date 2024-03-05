@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import Entity from './components/Entity'
-import data from './assets/data.json'
+import data from './assets/entityData.json'
 
 const ClickComponent = () => {
 	const [entityIndex, setEntityIndex] = useState(0)
@@ -24,6 +24,7 @@ const ClickComponent = () => {
 	return (
 		<div className='flex flex-col justify-center items-center h-full w-full'>
 			<p>Gold: {gold}</p>
+			<p>CPS: {cps}</p>
 			<div className='flex flex-row justify-evenly'>
 				<button
 					hidden={entityIndex <= 0}
@@ -48,7 +49,6 @@ const ClickComponent = () => {
 					RIGHT
 				</button>
 			</div>
-			<p>CPS: {cps}</p>
 		</div>
 	)
 }

@@ -29,7 +29,7 @@ const Entity = ({ entity, setGold, clicked }) => {
 				className='max-h-72'
 				draggable='false'
 				onClick={() => attack()}
-				src={'/src/assets/' + entity.name + '.jpeg'}
+				src={'/src/assets/Entities/' + entity.name + '.jpeg'}
 			/>
 		</div>
 	)
